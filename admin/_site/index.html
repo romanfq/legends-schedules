@@ -1,0 +1,62 @@
+<h1>Generate Weekend JSON</h1>
+<p>Fill in the match info below. The generated JSON can be copied into <code>_data/weekends/YYYY-MM-DD.json</code> for GitHub Pages.</p>
+
+<form id="match-form">
+  <!-- Saturday Match (JPL) -->
+  <fieldset>
+    <legend>Saturday Match (JPL)</legend>
+    <label>Status:
+      <select name="sat_status" class="status-select">
+        <option value="scheduled" selected>Scheduled</option>
+        <option value="cancelled">Cancelled</option>
+        <option value="deferred">Deferred</option>
+      </select>
+    </label>
+    <div class="match-fields">
+      <label>Date: <input type="date" name="sat_date" required></label><br><br>
+      <label>Meeting Time: <input type="time" name="sat_meeting_time"></label><br><br>
+      <label>Kickoff Time: <input type="time" name="sat_kickoff_time"></label><br><br>
+      <label>Home Team: <input type="text" name="sat_home_team"></label><br><br>
+      <label>Away Team: <input type="text" name="sat_away_team"></label><br><br>
+      <label>Venue Name: <input type="text" name="sat_venue_name"></label><br><br>
+      <label>Venue Address: <input type="text" name="sat_venue_address"></label><br><br>
+      <label>Google Maps Link: <input type="url" name="sat_maps_link"></label><br><br>
+      <label>Maps Embed URL: <input type="url" name="sat_maps_embed"></label><br><br>
+    </div>
+  </fieldset>
+
+  <hr>
+
+  <!-- Sunday Match (Selkent) -->
+  <fieldset>
+    <legend>Sunday Match (Selkent)</legend>
+    <label>Status:
+      <select name="sun_status" class="status-select">
+        <option value="scheduled" selected>Scheduled</option>
+        <option value="cancelled">Cancelled</option>
+        <option value="deferred">Deferred</option>
+      </select>
+    </label>
+    <div class="match-fields">
+      <label>Date: <input type="date" name="sun_date" required></label><br><br>
+      <label>Meeting Time: <input type="time" name="sun_meeting_time"></label><br><br>
+      <label>Kickoff Time: <input type="time" name="sun_kickoff_time"></label><br><br>
+      <label>Home Team: <input type="text" name="sun_home_team"></label><br><br>
+      <label>Away Team: <input type="text" name="sun_away_team"></label><br><br>
+      <label>Venue Name: <input type="text" name="sun_venue_name"></label><br><br>
+      <label>Venue Address: <input type="text" name="sun_venue_address"></label><br><br>
+      <label>Google Maps Link: <input type="url" name="sun_maps_link"></label><br><br>
+      <label>Maps Embed URL: <input type="url" name="sun_maps_embed"></label><br><br>
+    </div>
+  </fieldset>
+
+  <button type="submit">Generate JSON</button>
+</form>
+
+<h2>Generated JSON</h2>
+<pre id="json-output" style="background:#f0f0f0; padding:1rem;"></pre>
+
+<h2>Live Preview</h2>
+<div id="preview-container"></div>
+
+<script src="/assets/admin.js" defer></script>

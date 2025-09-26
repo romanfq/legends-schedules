@@ -1,0 +1,118 @@
+body {
+    font-family: system-ui, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #f8f9fa;
+  }
+  
+  header, footer {
+    text-align: center;
+    padding: 1rem;
+    background: #222;
+    color: #fff;
+  }
+  
+  #matches-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    padding: 1rem;
+  }
+
+  .match-date {
+    font-weight: 500;
+    color: #555;
+    margin-bottom: 0.5rem;
+    font-size: 1.5rem;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+  }
+  
+  .match-card {
+    background: #fff;
+    border-radius: 12px;
+    padding: 1rem;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    flex: 1 1 320px;
+    max-width: 380px;
+  }
+
+  .match-card-body {
+    border-top: 1px solid #eee;
+    padding-top: 0.5rem;
+    font-size: 0.95rem;
+  }
+  
+  .match-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .map-container {
+    margin-top: 0.5rem;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    border-radius: 8px;
+  }
+  
+  .map-container iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+  }
+  
+  /* ===== League Box (Icon on Top) ===== */
+  .league-box {
+    display: flex;
+    flex-direction: column; /* stack icon over name */
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 0.5rem;
+  }
+  
+  .league-icon img {
+    height: 80px;
+    width: 80px;
+    object-fit: contain;
+    margin-bottom: 0.3rem;
+  }
+  
+  .league-name {
+    font-weight: 600;
+    font-size: 1.1rem;
+    text-align: center;
+  }
+  
+  .status-cancelled {
+    color: #b00020;
+    font-weight: bold;
+  }
+  
+  .status-deferred {
+    color: #e65100;
+    font-weight: bold;
+  }
+  
+  .teams {
+    margin: 0.5rem 0;
+    font-size: 1.2rem;
+    text-align: center;
+  }
+  
+  .venue {
+    margin: 0.5rem 0;
+  }
+
+  .timing {
+    color: #e65100;
+  }
+
+  .timings {
+    text-align: center;
+  }
+  
+
+  

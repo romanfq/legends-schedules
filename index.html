@@ -1,0 +1,50 @@
+---
+layout: default
+title: Weekend Matches
+---
+
+{% assign latest_key = "" %}
+
+{% for kv in site.data.weekends %}
+{% assign key = kv[0] %}
+{% assign value = kv[1] %}
+{% if key > latest_key %}
+{% assign latest_key = key %}
+{% endif %}
+{% endfor %}
+
+{% assign next_weekend = site.data.weekends[latest_key] %}
+
+<div id="matches-container">
+    {% for match in next_weekend.matches %}
+    <div class="match-card">
+        <div class="league-box">
+            <div class="league-icon">
+                <img src="assets/{{ match.league | downcase }}-icon.png" alt="{{ match.league }}">
+            </div>
+            <div class="league-name">{{ match.league }}</div>
+        </div>
+        <div class="match-date">{{ match.date }}</div>
+        <div class="match-card-body">
+            {% if match.status != "scheduled" %}
+            <p class="status-{{ match.status }}">{{ match.status | upcase }}</p>
+            {% else %}
+            <div class="timings">
+                <p class="teams"><strong>{{ match.home_team }}</strong> vs {{ match.away_team }}</p>
+                <span><strong>Meeting:</strong> <span class="timing">{{ match.meeting_time }}</span></span>
+                <span> | </span>
+                <span><strong>Kickoff:</strong> <span class="timing">{{ match.kickoff_time }}</span></span>
+            </div>
+            <div class="venue">
+                <strong>Venue:</strong> {{ match.venue.name }}, {{ match.venue.address }}
+            </div>
+            {% if match.venue.maps_embed %}
+            <div class="map-container">
+                <iframe src="{{ match.venue.maps_embed }}" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+            {% endif %}
+            {% endif %}
+        </div>
+    </div>
+    {% endfor %}
+</div>
