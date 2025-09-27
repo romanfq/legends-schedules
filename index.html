@@ -24,7 +24,7 @@ title: Weekend Matches
             </div>
             <div class="league-name">{{ match.league }}</div>
         </div>
-        <div class="match-date">{{ match.date }}</div>
+        <div class="match-date"><span class="timing">{{ match.date | date : "%a"}}</span>&nbsp;{{ match.date }}</div>
         <div class="match-card-body">
             {% if match.status != "scheduled" %}
             <p class="status-{{ match.status }}">{{ match.status | upcase }}</p>
